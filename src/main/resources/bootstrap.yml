@@ -1,0 +1,14 @@
+spring: 
+    profiles: 
+        active: dev #dev开发环境
+    application: 
+        name: mayikt-nacos-client #服务器名称不能有下划线_
+    cloud: 
+        nacos: #这个配置必须放在bootstrap配置文件里面,
+            discovery: 
+                server-addr: 10.10.12.28:8848 #注册中心地址,俩个地址是一样的,都在Nacos里面,集群的话可以在这里配置多个IP
+            config:
+                server-addr: 10.10.12.28:8848 #配置中心,俩个地址是一样的,都在Nacos里面
+                group: DEFAULT_GROUP #分组名称
+                file-extension: properties #配置文件后缀名
+                
